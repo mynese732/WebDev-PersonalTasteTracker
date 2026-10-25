@@ -33,11 +33,19 @@ console.log("\n#4:");
     // "I always recommend ____ to friends."
     // "Trust me — ____ is delicious."
 
-
+// the printFoodRecommendation function that takes a food name as an argument and prints out three recommendation statements about that food
+function printFoodRecommendation(foodName) {
+  console.log("Have you ever tried " + foodName + "?");
+  console.log("I always recommend " + foodName + " to friends.");
+  console.log("Trust me — " + foodName + " is delicious.");
+}
 
 // 4b. Call the function at least 3 times
 
 // calling the printFoodRecommendation function with different food names to demonstrate its functionality
+printFoodRecommendation("Chicken Alfredo");
+printFoodRecommendation("Pepperoni Pizza");
+printFoodRecommendation("Blue Ras Italian Shaved Ice");
 
 
 
@@ -48,7 +56,16 @@ let friendFavorites = [
   ];
 // 5. Print out only foods that have an "a" in the name. For example, "Pizza" would not be included, but "Donuts" would be.
 
+// Personal note: The instructions and example contridict, but the next step says to store them 
+// in an array called foodsWithA, so for this, I will just print foods with an "a" in the name
 
+// loops through the friendFavorites array and checks if each food name contains the letter "a". If it does, then it prints it
+// The toLowerCase() method is used to make the check case-insensitive, so it will catch both "a" and "A"
+for (let i = 0; i < friendFavorites.length; ++i){
+  if (friendFavorites[i].toLowerCase().includes("a")) { 
+    console.log(friendFavorites[i]);
+  }
+}
 
 
 
