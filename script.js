@@ -71,8 +71,15 @@ for (let i = 0; i < friendFavorites.length; ++i){
 
 console.log("\n#6:");
 // 6. Store the result in an array called foodsWithA. Print out the array.
+// the array to hold the food names with an "a" in them
+let foodsWithA = [];
 
-
+// a reiteration of the previous loop, but this time instead of printing the food names with an "a", it adds them to a new array called foodsWithA
+for (let i = 0; i < friendFavorites.length; ++i){
+  if (friendFavorites[i].toLowerCase().includes("a")) {
+    foodsWithA.push(friendFavorites[i])
+  }
+}
 
 // printing the array
 console.log("The foods with A array: " + foodsWithA);
@@ -80,15 +87,31 @@ console.log("The foods with A array: " + foodsWithA);
 
 
 // 7. Create a new array longFoodNames for foods with names longer than 6 characters.
+// the array to hold the food names longer than 6 characters and the minimum length for a food name to be considered long
+let longFoodNames = [];
+let foodLengthMin = 7;
 
-
+// loops through the friendFavorites array and checks if each food name is longer than 6 characters. If it is, then it adds it to a new array called longFoodNames
+for (let i = 0; i < friendFavorites.length; ++i){
+  if (friendFavorites[i].length >= foodLengthMin) {
+    longFoodNames.push(friendFavorites[i])
+  }
+} 
 
 
 
 // 8. Create another array shortFoodNames for foods 6 characters or shorter.
 
+// the array to hold the food names 6 characters or shorter and the maximum length for a food name to be considered short
+let shortFoodNames = [];
+let foodLengthMax = 6;
 
-
+// loops through the friendFavorites array and checks if each food name is 6 characters or shorter. If it is, then it adds it to a new array called shortFoodNames
+for (let i = 0; i < friendFavorites.length; ++i){
+  if (friendFavorites[i].length <= foodLengthMax) {
+    shortFoodNames.push(friendFavorites[i])
+  }
+}
 
 
 console.log("\n#9:");
