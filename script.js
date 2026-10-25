@@ -118,10 +118,38 @@ console.log("\n#9:");
 // 9. Print both arrays and compare:
 // "There are more long-named foods." OR "There are more short-named foods."
 
+// the two arrays
+console.log("The foods with names longer than 6 characters: " + longFoodNames);
+console.log("The foods with names 6 characters or shorter: " + shortFoodNames);
 
+// comparing the to arrays and printing a message to indicate which one has more items
+console.log("There are more long-named foods: " + (longFoodNames.length > shortFoodNames.length));
 
 
 console.log("\n#10:");
 // 10. STRETCH: Find the longest food name and print:
 // "The longest food name in the list is ______ with ___ characters."
 
+// default variables to hold the longest food names and its length (will be updated in the loop below)
+let longestFoodNameLength = 0;
+let longestFoodNamesArray = [];
+
+// loops through every food in the friendFavorites array. If the length of the arrray food in the loop is longer than the current longestFoodNameLength, 
+// then it updates the longestFoodName and longestFoodNameLength variables to hold the new longest food name and its length. 
+// If the length is not longer, but is equal, then it is added to the longestFoodArray (in case there are multiple foods with the same longest length (there are I tested))
+for (let i = 0; i < friendFavorites.length; ++i){
+  let nameLength = friendFavorites[i].replaceAll(" ", "").length;
+
+  if (nameLength > longestFoodNameLength) {
+    longestFoodNameLength = nameLength;
+    longestFoodNamesArray = [friendFavorites[i]]; // resets the array to only hold the new longest food name
+  }
+  else if (nameLength === longestFoodNameLength) {
+    longestFoodNamesArray.push(friendFavorites[i]);
+  }
+}
+
+// printing out the longest food name and its length
+console.log("There are three foods with the longest name in the list if not including spaces.");
+console.log("The foods with the longest name in the list are " + longestFoodNamesArray + " with " + longestFoodNameLength + " characters.");
+// it would just be clam chowder and spring rolls with 12 characters if you do count spaces
